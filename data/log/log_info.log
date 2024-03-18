@@ -1,0 +1,11 @@
+24-03-18.15:25:37.158 [main            ] INFO  Application            - Starting Application using Java 19.0.2 on 雨哥Himself with PID 44304 (D:\桌面\big_market\xfg-frame-archetype-lite\xfg-frame-archetype-lite-app\target\classes started by 96458 in D:\桌面\big_market\xfg-frame-archetype-lite)
+24-03-18.15:25:37.161 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-03-18.15:25:38.049 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-03-18.15:25:38.060 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-03-18.15:25:38.061 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-03-18.15:25:38.061 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-03-18.15:25:38.166 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-03-18.15:25:38.166 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 955 ms
+24-03-18.15:25:38.555 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-03-18.15:25:38.573 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-03-18.15:25:38.585 [main            ] INFO  Application            - Started Application in 1.886 seconds (JVM running for 2.613)
