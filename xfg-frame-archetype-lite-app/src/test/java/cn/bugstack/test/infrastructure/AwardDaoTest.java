@@ -6,8 +6,6 @@ import com.alibaba.fastjson2.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -27,5 +25,6 @@ public class AwardDaoTest {
         List<Award> awards = awardDao.queryAwardList();
         log.info("测试结果：{}", JSON.toJSONString(awards));
     }
+
 
 }
