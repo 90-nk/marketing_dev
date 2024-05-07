@@ -1,7 +1,5 @@
 package cn.bugstack.test.domain;
 
-import ch.qos.logback.classic.Logger;
-import cn.bugstack.domain.strategy.service.armory.IStrategyArmory;
 import cn.bugstack.infrastructure.persistent.redis.IRedisService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
