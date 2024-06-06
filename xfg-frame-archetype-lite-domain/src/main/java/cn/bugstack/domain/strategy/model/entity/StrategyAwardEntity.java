@@ -7,20 +7,26 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
+/**
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 策略奖品实体
+ * @create 2023-12-23 10:48
+ */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class StrategyAwardEntity {
-    //策略ID
+
+    /** 抽奖策略ID */
     private Long strategyId;
-    //奖品ID
+    /** 抽奖奖品ID - 内部流转使用 */
     private Integer awardId;
-    //奖品库存总量
+    /** 奖品库存总量 */
     private Integer awardCount;
-    //奖品库存剩余
+    /** 奖品库存剩余 */
     private Integer awardCountSurplus;
-    //中奖概率
+    /** 奖品中奖概率 */
     private BigDecimal awardRate;
 
 }

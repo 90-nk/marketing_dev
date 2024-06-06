@@ -1,8 +1,8 @@
-package cn.bugstack.domain.strategy.service.rule.factory;
+package cn.bugstack.domain.strategy.service.rule.filter.factory;
 
 import cn.bugstack.domain.strategy.model.entity.RuleActionEntity;
 import cn.bugstack.domain.strategy.service.annotation.LogicStrategy;
-import cn.bugstack.domain.strategy.service.rule.ILogicFilter;
+import cn.bugstack.domain.strategy.service.rule.filter.ILogicFilter;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.core.annotation.AnnotationUtils;
@@ -12,7 +12,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-
+/**
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 规则工厂
+ * @create 2023-12-31 11:23
+ */
 @Service
 public class DefaultLogicFactory {
 
@@ -35,13 +39,23 @@ public class DefaultLogicFactory {
     @AllArgsConstructor
     public enum LogicModel {
 
-        RULE_WIGHT("rule_weight","【抽奖前规则】根据抽奖权重返回可抽奖范围KEY"),
-        RULE_BLACKLIST("rule_blacklist","【抽奖前规则】黑名单规则过滤，命中黑名单则直接返回"),
-
+        RULE_LOCK("rule_lock", "【抽奖中规则】抽奖n次后，对应奖品可解锁抽奖", "center"),
+        RULE_LUCK_AWARD("rule_luck_award", "【抽奖后规则】抽奖n次后，对应奖品可解锁抽奖", "after"),
+        RULE_BLACKLIST("rule_blacklist","【抽奖前规则】抽奖进行前，判断用户是否存在于黑名单内，并执行对应过滤操作","before"),
+        RULE_WIGHT("rule_weight","【抽奖前规则】抽奖进行前，判断已消耗积分是否已达到某个值，并据此判断中奖范围","before")
         ;
 
         private final String code;
         private final String info;
+        private final String type;
+
+        public static boolean isCenter(String code){
+            return "center".equals(LogicModel.valueOf(code.toUpperCase()).type);
+        }
+
+        public static boolean isAfter(String code){
+            return "after".equals(LogicModel.valueOf(code.toUpperCase()).type);
+        }
 
     }
 
